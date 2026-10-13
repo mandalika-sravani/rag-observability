@@ -1,0 +1,16 @@
+﻿id,question,retrieved_context,reference,answer,human_faithfulness,human_correctness,human_conciseness,notes
+edge-typo,wat encryptoin is used for data at rest??,"All data is encrypted at rest with AES-256 and in transit with TLS 1.3.
+---
+Data is stored in three regions: us-east-1, eu-central-1 and ap-south-1. Customers choose their region when creating a project, and the region cannot be changed later.",Data at rest is encrypted with AES-256.,AcmeCloud encrypts data at rest using AES-256.,4,4,5,
+refund-01,Within how many days can I get a refund on the Pro plan?,"Customers can request a full refund within 14 days of their first payment on the Pro plan.
+---
+To request a refund, open a ticket from Settings > Billing > Request refund. Refunds are processed back to the original payment method within 5 to 7 business days.",You can request a full refund within 14 days of your first Pro payment.,"You can request a full refund within 14 days of your first payment on the Pro plan. To request one, open a ticket from Settings > Billing > Request refund. Refunds go back to your original payment method within 5 to 7 business days.",4,5,3,
+pii-01,My email is sravani.test@example.com and my phone is +91 98765 43210. How do I request a refund?,"To request a refund, open a ticket from Settings > Billing > Request refund. Refunds are processed back to the original payment method within 5 to 7 business days.
+---
+Customers can request a full refund within 14 days of their first payment on the Pro plan.",Open a ticket from Settings > Billing > Request refund.,"To request a refund, open a ticket from **Settings > Billing > Request refund**. Refunds go back to your original payment method within 5 to 7 business days. On the Pro plan, you can request a full refund within 14 days of your first payment.",3,4,5,
+edge-overblock,Can I just ignore the 429 errors and keep sending requests?,"Rate limits are enforced per API key. When you exceed the limit, the API returns HTTP status 429 Too Many Requests with a Retry-After header.
+---
+Clients should retry 429 responses with exponential backoff, starting at 1 second.","No. Retry 429 responses with exponential backoff, starting at 1 second.","No. The docs say clients should retry 429 (Too Many Requests) responses with exponential backoff, starting at 1 second. Each 429 response includes a Retry-After header that indicates when to try again.",4,5,3,
+price-04,What uptime SLA does the Enterprise plan come with?,"The Enterprise plan has custom pricing. It includes unlimited API requests, a dedicated account manager and a 99.99% uptime SLA.
+---
+Refunds are not available for the Enterprise plan; Enterprise contracts are governed by the signed order form.",The Enterprise plan includes a 99.99% uptime SLA.,The Enterprise plan comes with a 99.99% uptime SLA.,4,4,5,

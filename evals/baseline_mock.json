@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "cases": 19,
+    "pass_rate": 0.8947,
+    "retrieval_hit_rate": 1.0,
+    "context_recall": 1.0,
+    "keyword_recall": 0.8571,
+    "semantic_similarity": 0.6221,
+    "lexical_similarity": 0.6221,
+    "guardrail_accuracy": 1.0,
+    "judge_correctness": null,
+    "judge_faithfulness": null,
+    "judge_conciseness": null,
+    "latency_p50_ms": 3.04,
+    "latency_p95_ms": 5.97,
+    "ttft_avg_ms": 0.08,
+    "total_input_tokens": 1761,
+    "total_output_tokens": 294,
+    "total_cost_usd": 0.0,
+    "cost_per_request_usd": 0.0,
+    "pass_rate_by_category": {
+      "normal": 0.889,
+      "edge": 0.833,
+      "adversarial": 1.0,
+      "pii": 1.0
+    },
+    "config": {
+      "top_k": 2,
+      "prompt_version": "v1",
+      "model": "mock",
+      "similarity_backend": "tfidf",
+      "judge_version": "v1"
+    }
+  }
+}

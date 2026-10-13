@@ -1,0 +1,35 @@
+name: LLM regression evals
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    env:
+      # Free + deterministic in CI. To evaluate the real model, add an
+      # ANTHROPIC_API_KEY repo secret, remove MOCK_LLM, and re-save the baseline.
+      MOCK_LLM: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+
+      - name: Unit + integration tests
+        run: pytest -q
+
+      - name: Golden-set eval vs baseline (fails on regression)
+        run: python -m evals.run_evals --label ci
+
+      - name: Upload eval report and traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: |
+            results/
+            traces/
